@@ -45,4 +45,6 @@ df[[columna1,,columna2]]
     df[df['Columna'] == dato].index[0] obtiene la primera coincidencia
 
 -> Una vez recorrida una fila, para obtener la columna se hace df.iloc[2].index[df.iloc[2] == i][0]
+
+-> at e iat son metodos de acceso para modificar valores de los dataframes. at utiliza fila como index y columna como string. iat utiliza las dos como index. Pero asi se puede modificar.
 """
