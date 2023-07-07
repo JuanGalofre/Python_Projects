@@ -35,7 +35,7 @@ df[[columna1,,columna2]]
 
 ->Para acceder a un row, se utiliza df.iloc[numero del row]. Cuando solo se devuelve una columna o una fila, se devuelve series.
 
--> Cuando se accede a una columna, el indice va a ser el indice generico,vease 0,1,2,3,etc. Mientras que cuando se accede a la fila, el indice va a ser el nombre de la columna. Interesante
+-> Cuando se accede a una columna df["column"], el indice va a ser el indice generico,vease 0,1,2,3,etc. Mientras que cuando se accede a la fila, el indice va a ser el nombre de la columna. Interesante
    para acceder a lo que se necesite.
 
 -> Para acceder a multiple rows, se puede hacer df.iloc[[0,1]]. Donde se va a obtener un data frame, con el indice normal y las columnas. Ahora, unua implementación de df.iloc, es restringir
