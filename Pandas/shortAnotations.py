@@ -41,4 +41,5 @@ df[[columna1,,columna2]]
 -> Para acceder a multiple rows, se puede hacer df.iloc[[0,1]]. Donde se va a obtener un data frame, con el indice normal y las columnas. Ahora, unua implementación de df.iloc, es restringir
    las columnas que queremos. Se refieren las columnas con df.iloc[[0,1],2]. En ese caso, se van a sacar las rows 1 y 2 con la columna 2. Tambien se podria poner con df.loc[[0,1],"email"] 
 
+-> Una vez recorrido una columna, para obtener el index de la columna se hace df[df["NombreColumna"]=="Lo que queremos buscar"].index.values
 """
