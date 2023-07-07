@@ -30,4 +30,15 @@ df2 = pd.read_csv("LocatDB2.csv")
 con_df=pd.concat([df1,df2]) 
 len(df1.index)
 
+-> Para hacer un dataframe mas pequeño, se puede hacer | para acceder a un dataframe solo con la dos columnas.
+df[[columna1,,columna2]]
+
+->Para acceder a un row, se utiliza df.iloc[numero del row]. Cuando solo se devuelve una columna o una fila, se devuelve series.
+
+-> Cuando se accede a una columna, el indice va a ser el indice generico,vease 0,1,2,3,etc. Mientras que cuando se accede a la fila, el indice va a ser el nombre de la columna. Interesante
+   para acceder a lo que se necesite.
+
+-> Para acceder a multiple rows, se puede hacer df.iloc[[0,1]]. Donde se va a obtener un data frame, con el indice normal y las columnas. Ahora, unua implementación de df.iloc, es restringir
+   las columnas que queremos. Se refieren las columnas con df.iloc[[0,1],2]. En ese caso, se van a sacar las rows 1 y 2 con la columna 2. Tambien se podria poner con df.loc[[0,1],"email"] 
+
 """
