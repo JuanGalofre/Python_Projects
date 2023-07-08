@@ -47,4 +47,9 @@ df[[columna1,,columna2]]
 -> Una vez recorrida una fila, para obtener la columna se hace df.iloc[2].index[df.iloc[2] == i][0]
 
 -> at e iat son metodos de acceso para modificar valores de los dataframes. at utiliza fila como index y columna como string. iat utiliza las dos como index. Pero asi se puede modificar.
+
+-> Si la matriz consta de numeritos que se puedan jugar con, df.describe() va a describir los numeritos que tenemos en el dataset.
+
+-> Como en TF, los df tambien tiene shape, df.shape() pa saber cuantas filas y cuantas columnas tiene 
+
 """
