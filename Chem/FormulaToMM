@@ -8,10 +8,12 @@ listaElementos="""1.0079	Hidrógeno	H
 15.9994	Oxígeno	O
 18.9984	Fluor	F
 20.1797	Neón	Ne
+22.9897	Sodio	Na
 24.305	Magnesio	Mg
 26.9815	Aluminio	Al
 28.0855	Sílice	Si
 30.9738	Fósforo	P
+32.065	Azufre	S
 35.453	Cloro	Cl
 39.0983	Potasio	K
 39.948	Argón	Ar
@@ -124,11 +126,11 @@ def encontrarPesoMolecular(formula, dictionary):
     if "(" in formula:
         elementos = re.findall( r"\((.*?)\)(\d*)?", formula)
         masa+=encontrarPesoNormal(elementos[0][0],dictionary)*int(elementos[0][1])
-        print(masa)
         formula=formula.replace(("("+elementos[0][0]+")"+elementos[0][1]),"")
         masa+=encontrarPesoNormal(formula,dictionary)
     else:
         masa=encontrarPesoNormal(formula,dictionary)
     return masa    
     
-print(encontrarPesoMolecular("CaN2O6",dictionary))
+print(encontrarPesoMolecular("(NH4)2SO4",dictionary))
+
