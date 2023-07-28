@@ -1,0 +1,134 @@
+listaElementos="""1.0079	Hidrógeno	H
+4.0026	Helio	He
+6.941	Litio	Li
+9.0122	Berilio	Be
+10.811	Boro	B
+12.0107	Carbono	C
+14.0067	Nitrógeno	N
+15.9994	Oxígeno	O
+18.9984	Fluor	F
+20.1797	Neón	Ne
+24.305	Magnesio	Mg
+26.9815	Aluminio	Al
+28.0855	Sílice	Si
+30.9738	Fósforo	P
+35.453	Cloro	Cl
+39.0983	Potasio	K
+39.948	Argón	Ar
+40.078	Calcio	Ca
+44.9559	Escandio	Sc
+47.867	Titanio	Ti
+50.9415	Vanadio	V
+51.9961	Cromo	Cr
+54.938	Manganeso	Mn
+55.845	Hierro	Fe
+58.6934	Níquel	Ni
+58.9332	Cobalto	Co
+63.546	Cobre	Cu
+65.39	Zinc	Zn
+69.723	Galio	Ga
+72.64	Germanio	Ge
+74.9216	Arsénico	As
+78.96	Selenio	Se
+79.904	Bromo	Br
+83.8	Kryptón	Kr
+85.4678	Rubidio	Rb
+87.62	Estroncio	Sr
+88.9059	Itrio	Y
+91.224	Zirconio	Zr
+92.9064	Niobio	Nb
+95.94	Molibdeno	Mo
+98	Tecnecio	Tc
+101.07	Rutenio	Ru
+102.9055	Rodio	Rh
+106.42	Paladio	Pd
+107.8682	Plata	Ag
+112.411	Cadmio	Cd
+114.818	Indio	In
+118.71	Estaño	Sn
+121.76	Antimonio	Sb
+126.9045	Iodo	I
+127.6	Teluro	Te
+131.293	Xenón	Xe
+132.9055	Cesio	Cs
+137.327	Bario	Ba
+138.9055	Lantano	La
+140.116	Cerio	Ce
+140.9077	Praseodimio	Pr
+144.24	Neodimio	Nd
+145	Promecio	Pm
+150.36	Samario	Sm
+151.964	Europio	Eu
+157.25	Gadolinio	Gd
+158.9253	Terbio	Tb
+162.5	Disprosio	Dy
+164.9303	Holmio	Ho
+167.259	Erbio	Er
+168.9342	Tulio	Tm
+173.04	Iterbio	Yb
+174.967	Lutecio	Lu
+178.49	Hafnio	Hf
+180.9479	Tantalio	Ta
+183.84	Wolframio	W
+186.207	Renio	Re
+190.23	Osmio	Os
+192.217	Iridio	Ir
+195.078	Platino	Pt
+196.9665	Oro	Au
+200.59	Mercurio	Hg
+204.3833	Talio	Tl
+207.2	Plomo	Pb
+208.9804	Bismuto	Bi
+209	Polonio	Po
+210	Ástato	At
+222	Radón	Rn
+223	Francio	Fr
+226	Radio	Ra
+227	Actinio	Ac
+231.0359	Protactinio	Pa
+232.0381	Torio	Th
+237	Neptunio	Np
+238.0289	Uranio	U
+243	Americio	Am
+244	Plutonio	Pu
+247	Curio	Cm
+247	Berkelio	Bk
+251	Californio	Cf
+252	Einstenio	Es
+257	Fermio	Fm
+258	Mendelevio	Md
+259	Nobelio	No
+261	Rutherfordio	Rf
+262	Lawrencio	Lr
+262	Dubnio	Db
+264	Bohrio	Bh
+266	Seaborgio	Sg
+268	Meitnerio	Mt
+277	Hassio	Hs"""
+import re
+listaElementos=listaElementos.splitlines()
+dictionary={}
+for i in range(len(listaElementos)):
+    dictionary.update({listaElementos[i].split("\t")[2]:listaElementos[i].split("\t")[0]})
+def encontrarPesoMolecular(formula, dictionary):
+    masa=0
+    def encontrarPesoNormal(formula, dictionary):
+        elementos = re.findall(r"([A-Z][a-z]*)(\d*)", formula)
+        masa_total = 0
+        for i in elementos:
+            if not i[1]:
+                masa_total+=float(dictionary[i[0]])
+            else:
+                masa_total+=float(dictionary[i[0]])*int(i[1])
+        return masa_total
+    if "(" in formula:
+        elementos = re.findall( r"\((.*?)\)(\d*)?", formula)
+        masa+=encontrarPesoNormal(elementos[0][0],dictionary)*int(elementos[0][1])
+        print(masa)
+        formula=formula.replace(("("+elementos[0][0]+")"+elementos[0][1]),"")
+        masa+=encontrarPesoNormal(formula,dictionary)
+    else:
+        masa=encontrarPesoNormal(formula,dictionary)
+    return masa    
+    
+print(encontrarPesoMolecular("CaN2O6",dictionary))
