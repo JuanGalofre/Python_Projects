@@ -1,0 +1,48 @@
+html{
+    box-sizing: border-box;
+
+}
+
+body{
+    display: flex;
+    margin:0;
+    padding:0;
+}
+
+#navbar{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    display: flex;
+    flex-direction: column;
+    width: 15vw;
+    height: 100vh;
+    border:2px solid goldenrod;
+}
+
+#navbar .nav-link{
+    display: flex;
+    font-family: inherit;
+    border-bottom:2px solid goldenrod ;
+    height: 6vh;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+
+}
+#navbar .nav-header{
+    display: flex;
+    font-family: inherit;
+    border-bottom:2px solid goldenrod ;
+    height: 8vh;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}   
+
+
+
+#main-doc{
+    display: flex;
+    width: 85vw;
+    height: 100vh;
+}
+

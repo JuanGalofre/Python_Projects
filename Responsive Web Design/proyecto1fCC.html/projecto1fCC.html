@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <h1 id="title">freeCodeCamp Survey Form</h1>
+        <p id="description">Thank you for taking the time to help us improve the platform</p>
+        <form id="survey-form">
+            <fieldset id="basic-questions">
+                <label id="name-label">Name<input id="name" type="text" placeholder="Enter your name" required ></label>
+                <label id="email-label">Email<input id="email" type="email" placeholder="Enter your email" required></label>
+                <label id="number-label">Age (optional)<input id="number" type="number"  placeholder="Enter your age"min="12" max="120" inputmode="numeric" ></label>
+            </fieldset>
+            <fieldset id="w-questions">
+                <label class="mainlabel">What option best describes your current role?
+                    <select id="dropdown-role"> 
+                        <option>Select current role</option>
+                        <option>Student</option>
+                        <option>Full time job</option>
+                        <option>Full time learner</option>
+                        <option>Prefer not to say</option>
+                        <option>Other</option>
+                    </select>
+                </label>
+                <label class="mainlabel">Would you recommend freeCodeCamp to a friend
+                    <label><input type="radio" value="Definetly" name="rdChoice">Definitely</label>
+                    <label><input type="radio" name="rdChoice" value="Maybe">Maybe</label>
+                    <label><input type="radio" name="rdChoice" value="Not sure">Not sure</label>
+                </label>
+
+                <label class="mainlabel">What is your favorite feature of freeCodeCamp
+                    <select id="dropdown">
+                        <option>Select an option</option> 
+                        <option>Challenges</option>
+                        <option>Projects</option>
+                        <option>Community</option>
+                        <option>Open source</option>
+                    </select>
+                </label>
+                <label class="mainlabel">What would you like to see improved?(Check all that apply)
+                        <label for="FeP"><input value="FeP"id="FeP"name="imprv"type="checkbox"/>Front-end Projects</label>
+                        <label for="GhR"><input value="GhR"id="GhR"name="imprv"type="checkbox"/>Gitter help rooms</label>
+                        <label for="BeP"><input value="BeP"id="BeP"name="imprv"type="checkbox"/>Back-end Projects</label>
+                        <label for="DVz"><input value="DVz"id="DVz"name="imprv"type="checkbox"/>Data Visualization</label>
+                        <label for="Chl"><input value="Chl"id="Chl"name="imprv"type="checkbox"/>Challenges</label>
+                        <label for="OsC"><input value="OsC"id="OsC"name="imprv"type="checkbox"/>Open Source Community</label>
+                        <label for="Vds"><input value="Vds"id="Vds"name="imprv"type="checkbox"/>Videos</label>
+                        <label for="CtyM"><input value="CtyM" id="CtyM"name="imprv"type="checkbox"/>City Meetups</label>
+                        <label for="Wki"><input value="Wki"id="Wki"name="imprv"type="checkbox"/>Wiki</label>
+                        <label for="Forum"><input value="Forum"id="Forum"name="imprv"type="checkbox"/>Forum</label>
+                        <label for="AddC"><input value="AddC"id="AddC"name="imprv"type="checkbox"/>Additional Courses</label>
+                </label>
+                
+            </fieldset>
+            <fieldset id="sugestions">
+                <label class="mainlabel">Any comments or sugestions
+                    <textarea placeholder="Enter your comment here..."></textarea>
+                </label>    
+            </fieldset>
+            <input type="submit" value="Submit" id="submit">
+        </form>
+        
+    </body>
+</html>
